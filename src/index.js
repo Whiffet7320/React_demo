@@ -1,41 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import img1 from './assets/1.jpg';
-import img2 from './assets/2.jpg';
-import img3 from './assets/3.jpg';
+import Student from './components/Student';
+import StudentList from './components/StudentList'
+const appkey = "demo13_1545210570249";
 
-const root = document.getElementById('root')
-const imgList = [img1, img2, img3];
-let index = 0;
-let timer;
-
-function render() {
-  ReactDOM.render(
-    <img src={imgList[index]} alt="" />,
-    root
-  );
+async function my_fetch() {
+  let stus = await fetch(`http://api.duyiedu.com/api/student/findAll?appkey=${appkey}`).then(res => {
+    return res.json()
+  }).then(resf => {
+    return resf.data
+  })
+  return stus
 }
-function start() {
-  stop();
-  timer = setInterval(() => {
-    index = (index + 1) % 3;
-    render()
-  }, 1000)
-
+const obj = {
+  address: "重庆111",
+  appkey: "demo13_1545210570249",
+  birth: 1999,
+  ctime: 1607330154,
+  email: "111@qq.com",
+  id: 70949,
+  name: "cyy123456789",
+  phone: "19923621111",
+  sNo: "1111",
+  sex: 0,
+  utime: 1608293101,
 }
-function stop() {
-  clearInterval(timer)
+async function render() {
+  ReactDOM.render("数据加载中...", document.getElementById('root'));
+  let stus = await my_fetch();
+  // ReactDOM.render(<Student {...obj} />, document.getElementById('root'));
+  ReactDOM.render(<StudentList stuObj={stus} />, document.getElementById('root'));
 }
-
-root.addEventListener('mouseenter', () => {
-  stop()
-})
-root.addEventListener('mouseleave', () => {
-  start()
-})
-
 render()
-start()
-
-
