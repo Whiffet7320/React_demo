@@ -1,0 +1,17 @@
+.ThreeLayout{
+  display: flex;
+  /* border: 1px solid orange; */
+  height: 1000px;
+}
+.ThreeLayout .ThreeLayout_left{
+  /* border: 1px solid blue; */
+  order: 1;
+}
+.ThreeLayout .ThreeLayout_right{
+  /* border: 1px solid pink; */
+  order: 3;
+}
+.ThreeLayout .ThreeLayout_main{
+  flex: 1 1 auto;
+  order: 2;
+}

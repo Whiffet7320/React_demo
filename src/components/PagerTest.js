@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Pager from './Pager';
 import StudentList from './StudentList';
-import Model from './Model'
+import Model from './Model';
+import ThreeLayout from './ThreeLayout';
 
 export default class PagerTest extends Component {
   constructor(props) {
@@ -45,7 +46,9 @@ export default class PagerTest extends Component {
   }
   render() {
     return (
-      <div>
+      // 三栏布局 ThreeLayout
+      <ThreeLayout minWidth={1200} gap={50} left={<div style={{border: '1px solid blue',height:'100%'}}>left</div>} right={<div style={{border: '1px solid pink',height:'100%'}}>right</div>}>
+        <h1>main</h1>
         <div className='myTest'>
           <StudentList stuObj={this.state.students} />
           <Pager {...this.state} onPageChange={this.handlePageChange} />
@@ -60,7 +63,7 @@ export default class PagerTest extends Component {
           </Model>):null
         }
         <button onClick={this.modelShowFun}>显示朦层</button>
-      </div>
+      </ThreeLayout>
 
     )
   }
