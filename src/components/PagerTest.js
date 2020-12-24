@@ -47,7 +47,7 @@ export default class PagerTest extends Component {
   render() {
     return (
       // 三栏布局 ThreeLayout
-      <ThreeLayout minWidth={1200} gap={50} left={<div style={{border: '1px solid blue',height:'100%'}}>left</div>} right={<div style={{border: '1px solid pink',height:'100%'}}>right</div>}>
+      <ThreeLayout leftWidth={300} minWidth={1200} gap={50} left={<div style={{border: '1px solid blue',height:'100%'}}>left</div>} right={<div style={{border: '1px solid pink',height:'100%'}}>right</div>}>
         <h1>main</h1>
         <div className='myTest'>
           <StudentList stuObj={this.state.students} />
@@ -64,7 +64,6 @@ export default class PagerTest extends Component {
         }
         <button onClick={this.modelShowFun}>显示朦层</button>
       </ThreeLayout>
-
     )
   }
 }

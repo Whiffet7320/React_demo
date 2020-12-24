@@ -5,9 +5,9 @@ import getAllStudents from '../StudentTest/Student'
 export default class Test extends Component {
   state = {
     my_data: [
-      { value: 'football', text: '足球' },
-      { value: 'basketball', text: '篮球' },
-      { value: 'other', text: '其他' }
+      // { value: 'football', text: '足球' },
+      // { value: 'basketball', text: '篮球' },
+      // { value: 'other', text: '其他' }
     ],
     chooseData: []
   }

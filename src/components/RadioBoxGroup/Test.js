@@ -12,16 +12,16 @@ export default class Test extends Component {
   }
   async componentDidMount() {
     const data = await getAllStudents()
-    const newData = data.map(ele=>{
-      return { value: ele.id, text: ele.name }
+    const newData = data.map(ele => {
+      return { value: ele.id.toString(), text: ele.name }
     })
     this.setState({
-      my_datas:newData
+      my_datas: newData
     })
   }
-  
+
   my_radioChange = (value) => {
-    console.log('chuf',value)
+    console.log('chuf', value)
     this.setState({
       value,
     })
