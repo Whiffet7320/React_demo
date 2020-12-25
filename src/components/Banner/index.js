@@ -37,7 +37,9 @@ export default class Banner extends Component {
   componentDidMount() {
     this.autoSwitch()
   }
-
+  componentWillUnmount(){
+    clearInterval(this.timer)
+  }
   imgListContent = el => {
     this.imgListComp = el
   }
