@@ -31,7 +31,7 @@ export default class Test extends Component {
       <div>
         <RadioBoxGroup
           name={'cyy'}
-          my_datas={this.state.my_datas}
+          datas={this.state.my_datas}
           value={this.state.value.toString()}
           my_onChange={this.my_radioChange}
         >

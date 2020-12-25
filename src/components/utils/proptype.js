@@ -5,5 +5,9 @@ export default {
     value:Proptypes.string.isRequired,
     text:Proptypes.string.isRequired,
   })),
-  chooseData:Proptypes.arrayOf(Proptypes.string)
+  chooseData:Proptypes.arrayOf(Proptypes.string),
+  oneDatas:Proptypes.shape({
+    value:Proptypes.string.isRequired,
+    text:Proptypes.string.isRequired,
+  })
 }
