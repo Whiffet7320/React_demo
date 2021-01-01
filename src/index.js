@@ -15,5 +15,8 @@ import ReactDOM from 'react-dom';
 
 // 轮播图
 // import Test from './components/Banner/Test' //轮播图
-import Test from './components/Form/Test' //From表单
+// import Test from './components/Form/Test' //From表单
+
+// Hook
+import Test from './components/HookStudent/Test' //Hook 学生列表
 ReactDOM.render(<Test />, document.getElementById('root'));
